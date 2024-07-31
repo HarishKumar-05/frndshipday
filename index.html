@@ -3,18 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birthday Wish</title>
+    <title>Friendship Day Greeting Card</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Happy Birthday, [Friend's Name]!</h1>
-        <p>Wishing you a fantastic day filled with joy and happiness.</p>
-        <button id="wishButton">Click for a Surprise!</button>
-        <div id="surpriseMessage" style="display:none;">
-            <p>You are an amazing friend! 🎉</p>
-        </div>
+    <div id="initialMessage">
+        <h1>Hi!</h1>
+        <button id="showCardButton">Click here for a surprise!</button>
     </div>
+    <div id="greetingCard" class="hidden">
+        <div id="page1" class="page">
+            <img src="image1.jpg" alt="Image 1">
+            <p>Happy Friendship Day!</p>
+        </div>
+        <div id="page2" class="page">
+            <img src="image2.jpg" alt="Image 2">
+            <p>You're an amazing friend!</p>
+        </div>
+        <div id="page3" class="page">
+            <img src="image3.jpg" alt="Image 3">
+            <p>Wishing you a wonderful day!</p>
+        </div>
+        <button id="prevButton" onclick="prevPage()">Prev</button>
+        <button id="nextButton" onclick="nextPage()">Next</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

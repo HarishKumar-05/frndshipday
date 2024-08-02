@@ -3,31 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Friendship Day Greeting Card</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Friendship Day Surprise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #8A2BE2, #FF69B4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Tangerine', cursive;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            border: 5px solid #FF69B4;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        .message {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #FF69B4;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            background-color: #FF1493;
+            transform: scale(1.1);
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            animation: popupAnimation 1s ease-out forwards;
+        }
+        @keyframes popupAnimation {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) translate(-50%, -50%);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translate(-50%, -50%);
+            }
+        }
+        .popup img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 5px solid #FF69B4;
+            box-shadow: 0 0 20px #FF69B4, 0 0 30px #FF69B4, 0 0 40px #FF69B4, 0 0 50px #FF69B4;
+            animation: imageAnimation 1s ease-out forwards;
+        }
+        @keyframes imageAnimation {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .popup-message {
+  font-family: Tangerine; /* Added font family */
+  font-size: 2.5em; /* Increased font size */
+  color: #4567b7; /* Changed to a blue color that's visible on a white background */
+  margin-bottom: 20px;
+  font-weight: 900; /* Increased font weight to make it bolder */
+}
+    </style>
 </head>
 <body>
-    <div id="initialMessage">
-        <h1>Hi!</h1>
-        <button id="showCardButton">Click here for a surprise!</button>
-    </div>
-    <div id="greetingCard" class="hidden">
-        <div id="page1" class="page">
-            <img src="image1.jpg" alt="Image 1">
-            <p>Happy Friendship Day!</p>
-        </div>
-        <div id="page2" class="page hidden">
-            <img src="image2.jpg" alt="Image 2">
-            <p>You're an amazing friend!</p>
-        </div>
-        <div id="page3" class="page hidden">
-            <img src="image3.jpg" alt="Image 3">
-            <p>Wishing you a wonderful day!</p>
-        </div>
-        <button id="prevButton" class="hidden" onclick="prevPage()">Prev</button>
-        <button id="nextButton" onclick="nextPage()">Next</button>
+    <div class="container">
+        <div class="message">Hii 😇</div>
+        <button class="button" onclick="showPopup()">Click here for surprise</button>
     </div>
 
-    <script src="script.js"></script>
+    <div class="popup" id="popup">
+        <img src="frnd.jpg" alt="Surprise Image">
+        <div class="popup-message">Happiee Frndship Day Gopz 🫂💖</div>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+    </script>
 </body>
 </html>

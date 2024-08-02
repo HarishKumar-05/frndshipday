@@ -26,7 +26,7 @@
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
         }
         .message {
-            font-size: 5em;
+            font-size: 4em;
             margin-bottom: 20px;
         }
         .button {
@@ -38,12 +38,13 @@
             border-radius: 10px;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
+            margin-top: 20px;
         }
         .button:hover {
             background-color: #FF1493;
             transform: scale(1.1);
         }
-        .popup {
+        .popup, .popup-special {
             display: none;
             position: fixed;
             top: 50%;
@@ -87,28 +88,44 @@
                 transform: scale(1);
             }
         }
-        .popup-message {
-            font-size: 3em;
+        .popup-message, .popup-special-message {
+            font-size: 2.5em;
             color: #8A2BE2;
             margin-bottom: 20px;
             font-weight: bold;
+        }
+        .popup-special {
+            background-color: pink;
+        }
+        .popup-special-message {
+            font-size: 2.5em;
+            color: #d6336c;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="message">Hi 😇</div>
+        <div class="message">Hii 😇</div>
         <button class="button" onclick="showPopup()">Click here for surprise</button>
     </div>
 
     <div class="popup" id="popup">
         <img src="frnd.jpg" alt="Surprise Image">
         <div class="popup-message">Happiee Frndship Day Gopz❤️🫂</div>
+        <button class="button" onclick="showSpecialPopup()">Click 4 Special Msg</button>
+    </div>
+
+    <div class="popup-special" id="popupSpecial">
+        <div class="popup-special-message">😇Promise to be Good Frnds 4evr❣️</div>
     </div>
 
     <script>
         function showPopup() {
             document.getElementById('popup').style.display = 'block';
+        }
+
+        function showSpecialPopup() {
+            document.getElementById('popupSpecial').style.display = 'block';
         }
     </script>
 </body>
